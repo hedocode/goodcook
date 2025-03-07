@@ -1,0 +1,55 @@
+<mat-card appearance="outlined">
+    <mat-card-content>
+        @if (this.ingredient.id) {
+
+            @if (this.editMode) {
+                <input
+                    id="ingredientName" type="text"
+                    [(ngModel)]="this.ingredient.name"
+                    (keyup.enter)="this.editIngredient()"
+                />
+            }
+            @else {
+                {{ this.ingredient.name }}
+            }
+            <span class="actions">
+                @if (this.editMode) {
+                    <button
+                        mat-mini-fab
+                        (click)="this.editIngredient()"
+                        aria-label="Validate"
+                    >
+                        <mat-icon aria-hidden="false" fontIcon="check"/>
+                    </button>
+                    <button
+                        mat-mini-fab
+                        (click)="this.toggleEdition()"
+                        aria-label="Cancel"
+                    >
+                        <mat-icon aria-hidden="false" fontIcon="close"/>
+                    </button>
+                }
+                @else {
+                    <button
+                        mat-mini-fab
+                        (click)="this.toggleEdition()"
+                        aria-label="Toggle edition"
+                    >
+                        <mat-icon aria-hidden="false" fontIcon="edit"/>
+                    </button>
+                    <button
+                        mat-mini-fab
+                        (click)="this.removeIngredient(this.ingredient.id)"
+                        aria-label="Delete ingredient"
+                    >
+                        <mat-icon aria-hidden="false" fontIcon="delete"/>
+                    </button>
+                }
+            </span>
+        }
+        @else {
+            <input id="ingredientName" type="text" [(ngModel)]="ingredientDraft"/>
+            <button (click)="addIngredient(ingredientDraft)">Add</button>
+        }
+    </mat-card-content>
+</mat-card>

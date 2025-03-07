@@ -1,0 +1,18 @@
+mat-card {
+    margin-bottom: 12px;
+
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+#ingredientName {
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+}

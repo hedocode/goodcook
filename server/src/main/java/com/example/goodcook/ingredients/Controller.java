@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/ingredients")
+@CrossOrigin("http://localhost:4200")
 public class Controller {
 	private final Repository ingredientRepository;
 	
@@ -42,7 +43,6 @@ public class Controller {
 		return ResponseEntity.ok(foundItem);
 	}
 	
-	@CrossOrigin("http://localhost:4200")
 	@PostMapping("/add")
 	ResponseEntity<Ingredient> createIngredient(@RequestBody Ingredient ingredient) {
 		if(ingredient.getId() != null) {
@@ -65,7 +65,6 @@ public class Controller {
 		}
 	}
 
-	@CrossOrigin("http://localhost:4200")
 	@DeleteMapping("/remove/{id}")
 	ResponseEntity<String> delete(@PathVariable Integer id) {
 		ingredientRepository.deleteById(id);

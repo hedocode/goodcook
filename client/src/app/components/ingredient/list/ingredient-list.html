@@ -1,0 +1,13 @@
+@if (isLoading) {
+    <div>Loading...</div>
+}
+@else {
+    @for (ingredient of ingredients; track ingredient.id) {
+        <ingredient-item
+            [ingredient]="ingredient"
+            (onIngredientRemoved)="removeIngredient($event)"
+        />
+    }
+}
+
+<ingredient-item (onIngredientAdded)="addIngredient($event)"/>
