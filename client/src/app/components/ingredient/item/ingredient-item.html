@@ -10,7 +10,9 @@
                 />
             }
             @else {
-                {{ this.ingredient.name }}
+                <span id="ingredientName">
+                    {{ this.ingredient.name }}
+                </span>
             }
             <span class="actions">
                 @if (this.editMode) {
