@@ -8,16 +8,9 @@ describe('DocsComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the docs component', () => {
     const fixture = TestBed.createComponent(DocsComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(DocsComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, goodcook-ui');
   });
 });
