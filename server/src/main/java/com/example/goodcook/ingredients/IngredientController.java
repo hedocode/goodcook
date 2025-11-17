@@ -22,10 +22,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RestController
 @RequestMapping("/ingredients")
 @CrossOrigin("http://localhost:4200")
-public class Controller {
-	private final Repository ingredientRepository;
+public class IngredientController {
+	private final IngredientRepository ingredientRepository;
 	
-	public Controller(Repository ingredientRepository) {
+	public IngredientController(IngredientRepository ingredientRepository) {
 		this.ingredientRepository = ingredientRepository;
 	}
 	
